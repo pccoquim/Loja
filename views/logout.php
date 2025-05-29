@@ -1,5 +1,5 @@
-<?php
-    header("Location: login.php");
-    session_destroy();
-    exit();
-?>
+<?php                                                                                                                           // Início do bloco PHP de administração de produtos
+    header("Location: login.php");                                                                                              // Redirecionar para a página de login
+    session_destroy();                                                                                                          // Destruir a sessão para limpar os dados do usuário
+    exit();                                                                                                                     // Sair do script para evitar que o restante do código seja executado
+?>                                                                                                                              <!-- Fim do bloco PHP de administração de produtos -->

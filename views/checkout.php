@@ -1,7 +1,8 @@
 <?php
-session_start();
+session_start();    
 require '../api/db.php';
 require '../api/auth.php';
+require '../api/secrets.php';
 
 if (!isset($_SESSION['user'])) {
     header('Location: login.php');
@@ -32,7 +33,7 @@ while ($row = $res->fetch_assoc()) {
     <meta charset="UTF-8">
     <title>Finalizar Compra</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://www.paypal.com/sdk/js?client-id=AZwfTd6ZVVfQSDKGOFF3WSTHf3n31Tq9o-tf2gNRoy-29BqA9ioZ3NjrV-8SZ8OvFYdqoFbvWvdWxAhw&currency=EUR"></script> <!-- Substituir SEU_CLIENT_ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=<?= $PAYPAL_ID ?>&currency=EUR"></script> <!-- Substituir SEU_CLIENT_ID -->
 </head>
 <body class="bg-light">
 <div class="container py-5">
